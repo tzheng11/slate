@@ -1,168 +1,108 @@
 ---
-title: API Reference
-
-language_tabs:
-  - shell
-  - ruby
-  - python
-
-toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
-
 includes:
-  - errors
-
+  - conclusion
 search: true
+language_tabs:
+  - zenprospect
+toc_footers:
+  - Written by ZenProspect
+title: "Sales Development University | ZenProspect"
 ---
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to ZenProspect's sales development university! In this guide, you'll
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+learn how to generate demos from scratch.
 
-This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
+# Understand your buyer
 
-# Authentication
+You need to do your homework if you want to get responses:
 
-> To authorize, use this code:
+1. **Understand your buyer persona** — are they VP Sales, VP Marketing, HR,
+   
+   CEOs, etc? Do they work at Fortune 500 Companies, or at startups? Go here to
+   
+   check out how you can use ZenProspect's tools to do it!
+   
+2. **Think carefully about your prospect’s pain points**, and how your business
+   
+   solves them. Are they trying to scale their sales? Are they trying to fight
+   
+   churn?
+   
+3. **Research Competitors** — What’s your competition doing? Do they have
+   
+   useful messaging that you could repackage to use for your own campaign? Look
+   
+   at their websites and sign up to their mailing list with an alternate email
+   
+   to collect research.
 
-```ruby
-require 'kittn'
+## Make your best guess
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-```python
-import kittn
+  I guessed that ZenProspect has two main buyer personas. 
 
-api = kittn.authorize('meowmeowmeow')
-```
+1. ZenProspect's primary buyer persona are those looking to build up outbound
+   
+   - Title: Founder, CEO, VP of Sales (if they've done mostly inbound and are looking to build up outbound)
+   - Vertical: Enterprise Software
+   - Company Size: 1-10 employees, 11-50
+   - Other attributes: Currently has 5-100 customers, mostly through inbound, referrals, random, etc.
+   - Business neeed: Looking to **build** up outbound.
+   
+2. ZenProspect secondary buyer persona are those looking to scale up outbound
+   
+   - Role: Whoever is in charge of SDRs
+     
+   - Title: sales development director, sales development manager, sales director, VP of Sales, Demand Gen
+     
+   - Vertical: Enterprise Software
+     
+   - Company Size: 11-50, 51-200
+     
+   - Other attributes: Currently has a template that's generating some responses.
+     
+   - Business neeed: Looking to **scale** up outbound. 
+     
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
+## Discover hidden predictive signals
 
-> Make sure to replace `meowmeowmeow` with your API key.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+  By using ZenProspect's tool, we found many new more interesting stuff, such as A, B, C.
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Authorization: meowmeowmeow`
+## Understand your prospects' pain points and how your solution can help them
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
+For each segment, list the specific problems they face, and how you can help
 
-# Kittens
+them.
 
-## Get All Kittens
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-```ruby
-require 'kittn'
+1. Looking to build up outbound
+   - Not sure where to start -> handholding onboarding (aka buying) process to help you get started with outbound
+   - How to discover ICP -> we'll do that for you with ZP tool
+   - How to write emails -> SDR university, consulting
+   - How to improve conversion rates -> Insights tool, SDR University, consulting
+   - How to get leads -> One-click get leads
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
 
-```python
-import kittn
+1. Looking to scale up outbound
+   
+   - Spending too long prospecting on LinkedIn -> Getting more prospects faster
+     
+   - Reply rates aren't high enough -> Optimizing conversion rates.
+     
+   - Feel like we're randomly guessing ICP -> Understand ICP scientifically
+     
+   - Ran out of initial ICP -> discover new ICPs that are as good or better
+     
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
+## Research competitors
